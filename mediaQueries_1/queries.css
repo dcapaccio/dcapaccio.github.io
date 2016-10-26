@@ -1,0 +1,168 @@
+    /* This fixes the problem some of you might have had with padding and borders adding to your width. This property makes it so "width" and "height" actually mean total width and height. */
+    * {
+        box-sizing: border-box;
+    }
+    .row:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    /* This is called an "attribute selector" and the attribute we're looking for is the prefix "col-". 
+    This can be used on any class or grouping with the same title 
+    More information can be gleaned : http://www.w3schools.com/css/css_attribute_selectors.asp*/
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+    }
+    /* This is for 12 columns*/
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .fullWidth {
+      width:100%;
+      float:left;
+      display:block;
+      margin:0;
+      padding:0;
+      overflow: hidden;
+    }
+    
+    .listItem {
+      list-style-type: none;
+      display:inline-block;
+      text-align: center;
+      width: 20%;
+    }
+    
+    .link {
+      text-decoration: none;
+      display:block;
+      background-color:#444;
+      color:#FFF;
+      padding: 10px 0;
+    }
+
+    @media all and (max-width: 30em){
+        /*.col-1 {width: 100%;}
+        .col-2 {width: 100%;}
+        .col-3 {width: 100%;}
+        .col-4 {width: 100%;}
+        .col-5 {width: 100%;}
+        .col-6 {width: 100%;}
+        .col-7 {width: 100%;}
+        .col-8 {width: 100%;}
+        .col-9 {width: 100%;}
+        .col-10 {width: 100%;}
+        .col-11 {width: 100%;}
+        .col-12 {width: 100%;}*/
+        [class*="col-"] {
+            width:100%;
+        }
+        
+        .fullWidth {
+          width:100%;
+          float:left;
+          display:block;
+          margin:0;
+          padding:0;
+          overflow: hidden;
+        }
+    
+        .listItem {
+          list-style-type: none;
+          display:inline-block;
+          text-align: center;
+          width: 20%;
+        }
+    
+        .link {
+          text-decoration: none;
+          display:block;
+          background-color:#444;
+          color:#222;
+          padding: 10px 0;
+        }
+        
+    }
+
+    @media all and (max-width: 48em) and (min-width:30em){
+        [class*="col-"] {
+            width:50%;
+        }
+    }
+    
+    html {
+        font-family: "Lucida Sans", sans-serif;
+    }
+
+    .header {
+        background-color: #993399;
+        color: #ffffff;
+        padding: 15px;
+        text-align:center;
+    }
+
+    @media all and (min-width: 25em){
+        .header {
+            background-color: #222;
+            color: #ffffff;
+            padding: px;
+            text-align:center;
+        }
+        .row {
+            height:400px;
+        }
+    }
+
+    @media all and (min-width: 49em){
+        .header {
+            background-color: #666;
+            color: #ffffff;
+            padding: px;
+            text-align:center;
+        }
+        .row {
+            height:500px;
+        }
+    }
+
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color :#338585;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .menu li:hover {
+        background-color: #0099cc;
+    }
+
+    .row {
+        height:300px;
+    }
+
+    .Box {
+        background-image:url("images/image.png");
+        background-size: cover;
+        color:#FFF;
+        height:100%;
+        display:flex;
+        align-items: center;
+    }
