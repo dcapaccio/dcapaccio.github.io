@@ -29,7 +29,7 @@ function setup() {
     colors.push(color(0, 255, 0, 20));
     snowflakes = new Array();
     for (var i = 0; i < 200; i++) {
-        snowflakes.push(new Snowflake(map(i, 0, 400, 0, width), random(height), random(10)));
+        snowflakes.push(new Snowflake(map(i, 0, 200, 0, width), random(height), random(10)));
     }
     curFace = 0;
 }
