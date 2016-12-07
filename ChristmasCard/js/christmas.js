@@ -28,14 +28,14 @@ function setup() {
     colors.push(color(255, 0, 0, 50));
     colors.push(color(0, 255, 0, 20));
     snowflakes = new Array();
-    for (var i = 0; i < 400; i++) {
+    for (var i = 0; i < 200; i++) {
         snowflakes.push(new Snowflake(map(i, 0, 400, 0, width), random(height), random(10)));
     }
     curFace = 0;
 }
 
 function draw() {
-    background(colors[0]);
+    background(0);
 
     fill(colors[0]);
     //draw the ellipse at the changing X position, and add noise to the Y to give it some jitter.
@@ -55,19 +55,26 @@ function draw() {
         snowflakes[i].move();
         snowflakes[i].display();
     }
+    if (iter % 300 == 0) {
+        increaseFace();
+    }
     //reset variable to the left side when it hits the right side.
     if (iter > windowWidth) {
         iter = 0;
     }
+}
 
-    if (mouseIsPressed) {
-        //save('myCanvas.png');
-        if (curFace == 5) {
-            curFace = 0;
-        } else {
-            curFace++;
-        }
+function increaseFace() {
+    if (curFace >= 5) {
+        curFace = 0;
+    } else {
+        curFace++;
     }
+}
+
+function mouseClicked() {
+    //save('myCanvas.png');
+    increaseFace();
 }
 
 function rEllipse(x, y, w, h, depth, angle, angleMod) {
@@ -89,7 +96,7 @@ function rEllipse(x, y, w, h, depth, angle, angleMod) {
 //Seed provides variation to the sin function so they all don't move in sync
 function Snowflake(x, y, seed = 0) {
 
-    this.radius = random(3, 7);
+    this.radius = random(5, 9);
     this.x = x;
     this.y = y;
     this.dir = 0;
