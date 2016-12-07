@@ -46,7 +46,7 @@ function draw() {
 
     fill(colors[0]);
     //replace with soba's face'
-    image(sobafaces[0], centerX + 300, centerY - 60, 300, 300);
+    image(sobafaces[0], centerX + 280, centerY - 60, 300, 300);
     //ellipse(centerX + 300, centerY + 30, 200, 200);
 
     for (var i = 0; i < snowflakes.length; i++) {
