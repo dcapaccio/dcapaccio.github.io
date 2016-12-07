@@ -5,6 +5,7 @@ var n; // for noise calculation
 var colors;
 var snowflakes;
 var sobafaces;
+var curFace;
 
 function preload() {
     sobafaces = new Array();
@@ -30,10 +31,11 @@ function setup() {
     for (var i = 0; i < 400; i++) {
         snowflakes.push(new Snowflake(map(i, 0, 400, 0, width), random(height), random(10)));
     }
+    curFace = 0;
 }
 
 function draw() {
-    background(0);
+    background(colors[0]);
 
     fill(colors[0]);
     //draw the ellipse at the changing X position, and add noise to the Y to give it some jitter.
@@ -46,7 +48,7 @@ function draw() {
 
     fill(colors[0]);
     //replace with soba's face'
-    image(sobafaces[0], centerX + 200, centerY - 60, 300, 300);
+    image(sobafaces[curFace], centerX + 200, centerY - 60, 300, 300);
     //ellipse(centerX + 300, centerY + 30, 200, 200);
 
     for (var i = 0; i < snowflakes.length; i++) {
@@ -60,6 +62,11 @@ function draw() {
 
     if (mouseIsPressed) {
         //save('myCanvas.png');
+        if (curFace == 5) {
+            curFace = 0;
+        } else {
+            curFace++;
+        }
     }
 }
 
