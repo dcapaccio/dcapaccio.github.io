@@ -73,8 +73,13 @@ function increaseFace() {
 }
 
 function mouseClicked() {
-    //save('myCanvas.png');
     increaseFace();
+}
+
+function keyPressed(){
+    if (keyCode === ENTER) {
+        save('myCanvas.png');
+    }
 }
 
 function rEllipse(x, y, w, h, depth, angle, angleMod) {
