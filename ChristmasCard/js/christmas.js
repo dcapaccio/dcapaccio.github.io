@@ -44,11 +44,11 @@ function draw() {
     n += .03; // smoother or jumpier? (lower numbers smoother)
 
     fill(colors[1]);
-    rEllipse(centerX, centerY, windowWidth / 2, windowWidth / 2, 20, 0, map(iter % 1000, 0, 1000, 2.5, 2.8));
+    rEllipse(centerX, centerY, centerX, centerX, 40, 0, map(iter % windowWidth, 0, windowWidth, 2.5, 2.8));
 
     fill(colors[0]);
     //replace with soba's face'
-    image(sobafaces[curFace], centerX + windowWidth / 6, centerY, windowWidth / 6, windowWidth / 6);
+    image(sobafaces[curFace], centerX + windowWidth * .1666, centerY, windowWidth * .1666, windowWidth * .1666);
     //ellipseMode(CORNER);
     //ellipse(centerX + windowWidth / 6, centerY, windowWidth / 6, windowWidth / 6);
     //ellipseMode(CENTER);
@@ -120,9 +120,9 @@ function Snowflake(x, y, seed = 0) {
         if (this.x > windowWidth) {
             this.x = 0;
         }
-
-        this.x += noise(this.iter);
-        this.y += this.dirY - noise(this.iter);
+        var n = noise(this.iter);
+        this.x += n;
+        this.y += this.dirY - n;
         //this.dirY += this.gravity;
 
     }
