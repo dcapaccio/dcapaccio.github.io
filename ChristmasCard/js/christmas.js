@@ -44,12 +44,14 @@ function draw() {
     n += .03; // smoother or jumpier? (lower numbers smoother)
 
     fill(colors[1]);
-    rEllipse(centerX, centerY, 600, 600, 40, 0, map(iter % 1000, 0, 1000, 2.5, 2.8));
+    rEllipse(centerX, centerY, windowWidth / 2, windowWidth / 2, 40, 0, map(iter % 1000, 0, 1000, 2.5, 2.8));
 
     fill(colors[0]);
     //replace with soba's face'
-    image(sobafaces[curFace], centerX + 200, centerY - 60, 300, 300);
-    //ellipse(centerX + 300, centerY + 30, 200, 200);
+    image(sobafaces[curFace], centerX + windowWidth / 6, centerY, windowWidth / 6, windowWidth / 6);
+    //ellipseMode(CORNER);
+    //ellipse(centerX + windowWidth / 6, centerY, windowWidth / 6, windowWidth / 6);
+    //ellipseMode(CENTER);
 
     for (var i = 0; i < snowflakes.length; i++) {
         snowflakes[i].move();
