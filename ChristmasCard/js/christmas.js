@@ -76,7 +76,7 @@ function mouseClicked() {
     increaseFace();
 }
 
-function keyPressed(){
+function keyPressed() {
     if (keyCode === ENTER) {
         save('myCanvas.png');
     }
@@ -120,7 +120,7 @@ function Snowflake(x, y, seed = 0) {
         }
 
         this.x += noise(this.iter);
-        this.y += this.dirY;
+        this.y += this.dirY - noise(this.iter);
         //this.dirY += this.gravity;
 
     }
@@ -134,7 +134,7 @@ function Snowflake(x, y, seed = 0) {
         fill(this.color);
         ellipse(this.x, this.y, this.radius, this.radius);
         //console.log(this.x);
-        this.iter += .2;
+        this.iter += .02;
     }
 
 }
