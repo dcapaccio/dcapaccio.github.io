@@ -28,8 +28,8 @@ function setup() {
     colors.push(color(255, 0, 0, 50));
     colors.push(color(0, 255, 0, 20));
     snowflakes = new Array();
-    for (var i = 0; i < 200; i++) {
-        snowflakes.push(new Snowflake(map(i, 0, 200, 0, width), random(height), random(10)));
+    for (var i = 0; i < 80; i++) {
+        snowflakes.push(new Snowflake(map(i, 0, 80, 0, width), random(height), random(10)));
     }
     curFace = 0;
 }
@@ -44,7 +44,7 @@ function draw() {
     n += .03; // smoother or jumpier? (lower numbers smoother)
 
     fill(colors[1]);
-    rEllipse(centerX, centerY, windowWidth / 2, windowWidth / 2, 40, 0, map(iter % 1000, 0, 1000, 2.5, 2.8));
+    rEllipse(centerX, centerY, windowWidth / 2, windowWidth / 2, 20, 0, map(iter % 1000, 0, 1000, 2.5, 2.8));
 
     fill(colors[0]);
     //replace with soba's face'
